@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nivaala — Contact</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-contact">
+
+  <!-- HEADER (reuse same nav) -->
+  <header class="site-header">
+    <nav class="nav-bar">
+      <div class="nav-left">
+        <img src="images/logo_v2.png" alt="NIVAALA" class="logo-img">
+        <span class="brand-text">NIVAALA</span>
+      </div>
+
+      <div class="nav-center">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="index.html#benefits" data-nav="why">Why Us</a>
+        <a href="about.html" data-nav="about">About Us</a>
+        <a href="index.html#products" data-nav="products">Our Range</a>
+        <a href="contact.html" class="active" data-nav="contact">Contact Us</a>
+      </div>
+
+      <div class="nav-right">
+        <!-- <a href="cart.html" class="cart-wrapper">
+            <i class="fas fa-shopping-bag nav-icon"></i>
+            <span class="cart-count" id="cart-count">0</span>
+          </a>
+        <a href="#products" class="nav-cta">Shop Now</a> -->
+    </div>
+</nav>
+</header>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>
+      For questions about our products, sourcing, or partnerships —
+      reach us directly.
+    </p>
+  </section>
+
+  <!-- CONTACT CONTENT -->
+  <section class="contact-section">
+    <div class="contact-wrapper">
+
+      <!-- LEFT: INFO -->
+      <div class="contact-info">
+        <h2>Reach Us</h2>
+
+        <p>
+          We don’t route messages through call centers.
+          If you write to us, someone from our team reads it.
+        </p>
+
+        <div class="contact-details">
+          <p><strong>Email</strong><br>info@nivaala.com</p>
+          <p><strong>Phone</strong><br>+91 9111113293</p>
+          <p><strong>Location</strong><br>Pipariya, Madhya Pradesh</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+
+        <form 
+        action="https://formsubmit.co/divyanshsahu12@gmail.com"
+        method="POST"
+      >
+        <!-- REQUIRED -->
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/contact.html?success=true">
+        <input type="hidden" name="_captcha" value="false">
+      
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+      
+        <button type="submit" id="submit-btn">Send Message</button>
+      </form>
+      
+<p class="success-message" style="display:none;">
+  Thank you — your message has been sent.
+</p>
+
+
+          <script src="script.js"></script>
+          
+          
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER (same as Home/About) -->
+   <footer>
+        <p>&copy; 2025 NIVAALA EST. 2000. All Rights Reserved.</p>
+    </footer>
+    <div class="toast" id="success-toast">
+        ✓ Message sent successfully
+      </div>
+      
+</body>
+  
+</html>

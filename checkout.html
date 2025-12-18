@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nivaala — Checkout</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    .checkout-container {
+      max-width: 1000px;
+      margin: 80px auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+    }
+
+    .checkout-box {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    }
+
+    .checkout-box h2 {
+      margin-bottom: 20px;
+      color: var(--primary-color);
+      font-size: 1.6rem;
+    }
+
+    .checkout-box label {
+      display: block;
+      margin: 15px 0 6px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .checkout-box input,
+    .checkout-box textarea,
+    .checkout-box select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .checkout-summary {
+      background: #fafafa;
+      padding: 25px;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+
+    .checkout-summary h3 {
+      margin-bottom: 15px;
+      color: var(--primary-color);
+      font-size: 1.3rem;
+    }
+
+    .checkout-summary ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .checkout-summary li {
+      margin-bottom: 12px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 12px;
+    }
+
+    .checkout-btn {
+      display: block;
+      text-align: center;
+      background: var(--primary-color);
+      color: white;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 4px;
+      margin-top: 20px;
+      transition: 0.3s;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .checkout-btn:hover {
+      background: var(--accent-color);
+    }
+  </style>
+
+</head>
+<body class="page-checkout">
+
+<header class="site-header">
+  <nav class="nav-bar">
+    
+    <div class="nav-left">
+      <img src="images/logo_v2.png" class="logo-img">
+      <span class="brand-text">NIVAALA</span>
+    </div>
+
+    <div class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="index.html#products">Our Range</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="cart.html" class="cart-wrapper">
+        <i class="fas fa-shopping-bag nav-icon"></i>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </div>
+
+  </nav>
+</header>
+
+
+<section class="checkout-container">
+
+  <!-- LEFT SIDE - ADDRESS FORM -->
+  <div class="checkout-box">
+    <h2>Delivery Information</h2>
+
+    <label>Full Name</label>
+    <input type="text" id="name" required>
+
+    <label>Phone Number</label>
+    <input type="tel" id="phone" required>
+
+    <label>Email</label>
+    <input type="email" id="email" required>
+
+    <label>Full Address</label>
+    <textarea id="address" rows="4" required></textarea>
+
+    <label>Pincode</label>
+    <input type="text" id="pincode" required>
+
+    <label>City</label>
+    <input type="text" id="city" required>
+
+    <label>State</label>
+    <input type="text" id="state" required>
+
+  </div>
+
+  <!-- RIGHT SIDE - CART SUMMARY -->
+  <div>
+    <div class="checkout-summary">
+      <h3>Your Order</h3>
+      <ul id="checkout-items"></ul>
+
+      <h3>Total: ₹<span id="checkout-total">0</span></h3>
+
+      <a onclick="placeOrder()" class="checkout-btn">Place Order</a>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 NIVAALA EST. 2000. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+function renderCheckout() {
+  const cart = getCart();
+  const list = document.getElementById("checkout-items");
+  const totalEl = document.getElementById("checkout-total");
+
+  list.innerHTML = "";
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.price * item.qty;
+    list.innerHTML += `<li>${item.name} × ${item.qty} — ₹${item.price * item.qty}</li>`;
+  });
+
+  totalEl.textContent = total;
+}
+
+function placeOrder() {
+  alert("Order placed! (payments coming soon)");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount();
+  renderCheckout();
+});
+</script>
+
+</body>
+</html>
