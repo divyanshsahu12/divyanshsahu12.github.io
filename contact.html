@@ -18,10 +18,11 @@
 
   <!-- HEADER (reuse same nav) -->
   <header class="site-header">
-    <nav class="nav-bar">
+    <!-- <nav class="nav-bar">
       <div class="nav-left">
-        <img src="images/logo_v2.png" alt="NIVAALA" class="logo-img">
-        <span class="brand-text">NIVAALA</span>
+       <a href="index.html" data-nav="home"> <img src="images/logo_v2.png" alt="NIVAALA" class="logo-img"> </a>
+       <a href="index.html" data-nav="home">  <span class="brand-text">NIVAALA</span> </a>
+
       </div>
 
       <div class="nav-center">
@@ -29,17 +30,47 @@
         <a href="index.html#benefits" data-nav="why">Why Us</a>
         <a href="about.html" data-nav="about">About Us</a>
         <a href="index.html#products" data-nav="products">Our Range</a>
-        <a href="contact.html" class="active" data-nav="contact">Contact Us</a>
+        <a href="contact.html" data-nav="contact">Contact Us</a>
+
       </div>
 
       <div class="nav-right">
-        <!-- <a href="cart.html" class="cart-wrapper">
+        <a href="cart.html" class="cart-wrapper">
             <i class="fas fa-shopping-bag nav-icon"></i>
             <span class="cart-count" id="cart-count">0</span>
           </a>
-        <a href="#products" class="nav-cta">Shop Now</a> -->
+        <a href="index.html#products" class="nav-cta">Shop Now</a>
+    </div>
+</nav> -->
+
+<nav class="nav-bar">
+    <div class="nav-left">
+        <a href="index.html" data-nav="home"> <img src="images/logo_v2.png" alt="NIVAALA" class="logo-img"> </a>
+        <a href="index.html" data-nav="home"> <span class="brand-text">NIVAALA</span> </a>
+    </div>
+
+    <div class="nav-center" id="nav-center">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="#benefits" data-nav="why">Why Us</a>
+        <a href="about.html" data-nav="about">About Us</a>
+        <a href="#products" data-nav="products">Our Range</a>
+        <a href="contact.html" data-nav="contact">Contact Us</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="cart.html" class="cart-wrapper">
+            <i class="fas fa-shopping-bag nav-icon"></i>
+            <span class="cart-count" id="cart-count">0</span>
+        </a>
+        
+        <a href="#products" class="nav-cta mobile-hide">Shop Now</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
 </nav>
+
 </header>
     </nav>
   </header>
@@ -67,8 +98,10 @@
         </p>
 
         <div class="contact-details">
-          <p><strong>Email</strong><br>info@nivaala.com</p>
-          <p><strong>Phone</strong><br>+91 9111113293</p>
+          <p><strong>Email</strong><br>info@nivaala.in</p>
+          <p><strong>Phone</strong><br>+91 9111113293
+            <br>+91 6232569658
+          </p>
           <p><strong>Location</strong><br>Pipariya, Madhya Pradesh</p>
         </div>
       </div>
@@ -84,6 +117,7 @@
         <!-- REQUIRED -->
         <input type="hidden" name="_next" value="http://127.0.0.1:5500/contact.html?success=true">
         <input type="hidden" name="_captcha" value="false">
+         <input type="hidden" name="_cc" value="sp6232569658@gmail.com">
       
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Email Address" required>
